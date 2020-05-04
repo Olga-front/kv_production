@@ -1,0 +1,470 @@
+@charset "UTF-8";
+
+/**
+ * Theme Name: Two Up
+ * Version: 1.0.0
+ * Theme URL: http://sequencejs.com/themes/two-up/
+ *
+ * A full-screen, two column layout for showing a featured image and description
+ *
+ * This theme is powered by Sequence.js - The
+ * responsive CSS animation framework for creating unique sliders,
+ * presentations, banners, and other step-based applications.
+ *
+ * Author: Ian Lunn
+ * Author URL: http://ianlunn.co.uk/
+ *
+ * Theme License: http://sequencejs.com/licenses/#free-theme
+ * Sequence.js Licenses: http://sequencejs.com/licenses/
+ *
+ * Copyright © 2015 Ian Lunn Design Limited unless otherwise stated.
+ */
+
+body {
+	overflow-x: hidden;
+}
+.seq {
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 0;
+	-webkit-text-size-adjust: 100%;
+	.slide-description {
+		position: absolute;
+		bottom: 9.8%;
+		right: 25px;
+		color: #fff;
+		h2 {
+			color: #fff;
+			font-size: 2.286em;
+			font-weight: 400;
+			text-transform: uppercase;
+			border-bottom: 1px solid #fff;
+			margin: 0;
+			letter-spacing: 1.5px;
+			line-height: 32px;
+			margin: 0 0 17px;
+		}
+		address {
+			font-style: normal;
+			letter-spacing: 1px;
+			.icon {
+				@include transition;
+				display: inline-block;
+				vertical-align: top;
+				margin: 0 20px 0 0;
+				path {
+					fill: #fff;
+				}
+			}
+		}
+		&:hover {
+			.icon {
+				margin: 0 13px 0 7px;
+			}
+		}
+	}
+	&.black-color {
+		.seq-canvas {
+			& > li {
+				.slide-description {
+					color: #000;
+					h2 {
+						color: #000;
+						border-color: #000;
+					}
+					address {
+						.icon {
+							path {
+								fill: #000;
+							}
+						}
+					}
+				}
+			}
+		}
+		.seq-nav {
+			ul {
+				& + a {
+					@include link-border(#000);
+				}
+				li {
+					a {
+						border-color: #000;
+					}
+					&.seq-current {
+						a {
+							background-color: #000;
+						}
+					}
+				}
+			}
+		}
+		.seq-next {
+			&:before,
+			&:after {
+				background-color: #000;
+			}
+		}
+	}
+	&.grey-color {
+		.seq-canvas {
+			& > li {
+				.slide-description {
+					color: #ccc;
+					h2 {
+						color: #ccc;
+						border-color: #ccc;
+					}
+					address {
+						.icon {
+							path {
+								fill: #ccc;
+							}
+						}
+					}
+				}
+			}
+		}
+		.seq-nav {
+			ul {
+				& + a {
+					@include link-border(#ccc);
+				}
+				li {
+					a {
+						border-color: #ccc;
+					}
+					&.seq-current {
+						a {
+							background-color: #ccc;
+						}
+					}
+				}
+			}
+		}
+		.seq-next {
+			&:before,
+			&:after {
+				background-color: #ccc;
+			}
+		}
+	}
+	&.white-color {
+		.seq-canvas {
+			& > li {
+				.slide-description {
+					color: #fff;
+					h2 {
+						color: #fff;
+						border-color: #fff;
+					}
+					address {
+						.icon {
+							path {
+								fill: #fff;
+							}
+						}
+					}
+				}
+			}
+		}
+		.seq-nav {
+			ul {
+				& + a {
+					@include link-border(#fff);
+				}
+				li {
+					a {
+						border-color: #fff;
+					}
+					&.seq-current {
+						a {
+							background-color: #fff;
+						}
+					}
+				}
+			}
+		}
+		.seq-next {
+			&:before,
+			&:after {
+				background-color: #fff;
+			}
+		}
+	}
+	.seq-screen,
+	.seq-canvas,
+	.seq-canvas > * {
+		@include reset-ul;
+	}
+	.seq-canvas {
+		white-space: nowrap;
+	}
+	.seq-canvas > * {
+		display: inline-block;
+		vertical-align: top;
+		width: 100%;
+	}
+	.seq-preload-circle {
+		fill: black;
+	}
+	.seq-in {
+		z-index: 1;
+	}
+	&.seq-active .seq-nav {
+		display: block;
+	}
+	&.seq-active .seq-in {
+		z-index: auto;
+	}
+	.seq-nav {
+		position: fixed;
+		z-index: 1;
+		bottom: 15%;
+		overflow: hidden;
+		padding: 0 0 49px 25px;
+		ul {
+			@include reset-ul;
+			width: 9px;
+			& + a {
+				@include link-border(#fff);
+				@include transform(rotate(-90deg));
+				font-size: 0.786em;
+				text-transform: uppercase;
+				line-height: 1em;
+				display: inline-block;
+				vertical-align: top;
+				position: relative;
+				margin: 65px 0 0 -50px;
+				letter-spacing: 1px;
+				&:after {
+					bottom: -4px;
+				}
+			}
+		}
+		li {
+			padding: 6px 0;
+			a {
+				@include border-radius(50%);
+				width: 9px;
+				height: 9px;
+				border: 2px solid #fff;
+				display: block;
+				font-size: 0;
+				line-height: 0;
+			}
+			&.seq-current {
+				a {
+					background-color: #fff;
+				}
+			}
+		}
+		a {
+			color: #fff;
+		}
+	}
+	.seq-next {
+		@include transform(translateX(-50%));
+		padding: 0;
+		background: none;
+		border: none;
+		line-height: 1;
+		bottom: 4vh;
+		left: 50%;
+		position: absolute;
+		z-index: 1;
+		font-size: 0;
+		line-height: 0;
+		width: 48px;
+		height: 24px;
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			width: 33px;
+			height: 2px;
+			background-color: #fff;
+			top: 11px;
+			left: -5px;
+		}
+		&:before {
+			@include rotate(45deg);
+		}
+		&:after {
+			@include rotate(-45deg);
+			left: 18px;
+		}
+	}
+	.seq-next-button {
+		display: none;
+	}
+	.seq-feature {
+		height: 200px;
+		overflow: hidden;
+		background: #333;
+		& > div {
+			width: 100%;
+			background-repeat: none;
+			background-position: 50% 50%;
+			background-size: cover;
+			height: 100vh;
+			& > img {
+				top: 95vh;
+				position: fixed;
+				transition-duration: 0.3s;
+				transition-property: transform;
+				width: 100%;
+			}
+		}
+	}
+	.seq-in {
+		/* Animate in positions for content */
+	}
+	.seq-out {
+		/* Animate out positions for content */
+	}
+	&.seq-fallback .seq-next-button {
+		display: none !important;
+	}
+}
+@media only screen and (min-width: 769px) {
+	html,
+	body {
+		height: 100%;
+	}
+	.seq {
+		height: 100%;
+		&.seq-active .seq-next-button {
+			display: block;
+		}
+		.seq-screen,
+		.seq-canvas,
+		.seq-canvas > * {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.seq-canvas {
+			white-space: normal;
+		}
+		.seq-feature {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+		}
+		.seq-feature {
+			left: auto;
+			height: auto;
+			right: 0;
+			-webkit-transform: translateY(100%) translateZ(0);
+			-ms-transform: translateY(100%) translateZ(0);
+			transform: translateY(100%) translateZ(0);
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-property: -webkit-transform;
+			transition-property: transform;
+		}
+		.seq-feature > div {
+			-webkit-transform: translateY(-80%) translateZ(0);
+			-ms-transform: translateY(-80%) translateZ(0);
+			transform: translateY(-80%) translateZ(0);
+		}
+		.seq-in {
+			/* Animate in positions for content */
+		}
+		.seq-in .seq-feature,
+		.seq-in .seq-feature > div {
+			-webkit-transform: translateY(0) translateZ(0);
+			-ms-transform: translateY(0) translateZ(0);
+			transform: translateY(0) translateZ(0);
+		}
+		.seq-out {
+			/* Animate out positions for content */
+		}
+		.seq-out .seq-feature,
+		.seq-out .seq-feature > div {
+			-webkit-transform: translateY(0) translateZ(0);
+			-ms-transform: translateY(0) translateZ(0);
+			transform: translateY(0) translateZ(0);
+		}
+		&.seq-reversed .seq-canvas > li {
+			/* Delay the moveActiveStepToTop option until the step has moved out */
+			-webkit-transition-delay: 0.4s;
+			transition-delay: 0.4s;
+			-webkit-transition-property: opacity, -webkit-transform, z-index !important;
+			transition-property: opacity, transform, z-index !important;
+		}
+		&.seq-fallback {
+			/* Styles for older browsers when in fallback mode */
+		}
+	}
+}
+@media only screen and (max-width: 768px) {
+	/* Increase the height of the hero image in one-up layout */
+	.seq {
+		.seq-feature {
+			height: 100vh;
+			position: relative;
+			& > div {
+				height: 100vh;
+				& > img {
+					display: none;
+				}
+			}
+		}
+		.slide-description {
+			bottom: 150px;
+			right: 20px;
+			position: absolute;
+		}
+		.seq-nav {
+			text-align: center;
+			bottom: 0;
+			text-align: center;
+			padding: 15px 20px;
+			width: 100%;
+			text-align: center;
+			&:before {
+				content: '';
+				position: absolute;
+				z-index: -1;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				background-color: rgba(0, 0, 0, 0.2);
+				height: 50px;
+			}
+			ul {
+				width: auto;
+				float: left;
+				margin: 3px 0 0;
+				& + a {
+					@include transform(rotate(0));
+					padding: 0 0 3px !important;
+					overflow: hidden;
+					&:after {
+						bottom: 0 !important;
+					}
+				}
+			}
+			li {
+				display: inline-block;
+				vertical-align: top;
+				padding: 6px 4px;
+			}
+			a {
+				&.all-projects {
+					float: right;
+					margin: 7px 0 0;
+				}
+			}
+		}
+	}
+}

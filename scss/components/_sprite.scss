@@ -1,0 +1,70 @@
+/* Icons from directory "" */
+@mixin icon{
+	background-image: url('../images/sprite.svg');
+	background-repeat: no-repeat;
+	display: inline-block;
+	vertical-align: top;
+}
+.icon-facebook{
+	@include icon;
+	background-position: 0 -16px;
+	width: 9px;
+	height: 16px;
+	&:hover{
+		background-position: 0 0;
+	}
+}
+.icon-instagram{
+	@include icon;
+	background-position: 0 -47px;
+	width: 14px;
+	height: 15px;
+	&:hover{
+		background-position: 0 -32px;
+	}
+}
+.icon-linkedin{
+	@include icon;
+	background-position: 0 -76px;
+	width: 15px;
+	height: 14px;
+	&:hover{
+		background-position: 0 -62px;
+	}
+}
+.icon-logo-full_blue{
+	@include icon;
+	background-position: 0 -90px;
+	width: 300px;
+	height: 126px
+}
+.icon-logo-full_green{
+	@include icon;
+	background-position: 0 -216px;
+	width: 300px;
+	height: 126px
+}
+.icon-logo-full_red{
+	@include icon;
+	background-position: 0 -342px;
+	width: 300px;
+	height: 126px
+}
+.icon-pinterest{
+	@include icon;
+	background-position: 0 -483px;
+	width: 14px;
+	height: 15px;
+	&:hover{
+		background-position: 0 -468px;
+	}
+}
+.icon-twitter{
+	@include icon;
+	background-position: 0 -511px;
+	width: 15px;
+	height: 13px;
+	&:hover{
+		background-position: 0 -498px;
+	}
+}

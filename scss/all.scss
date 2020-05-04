@@ -1,0 +1,23 @@
+// import variables and scss mixins
+@import "base/_variables.scss";
+@import "base/_markup-mixins.scss";
+// // import base styles
+@import "base/base-reset";
+// // import fonts
+@import "fonts/_font-family.scss";
+// //import common styles for all pages
+@import "components/_sprite.scss";
+@import "_layout.scss";
+// // import plugins
+@import "plugins/_hamburger-styles.scss";
+@import "plugins/_parallaxslider.scss";
+@import "plugins/_horizontal-slider.scss";
+@import "plugins/_custom-scrollbar.scss";
+@import "plugins/_masonry.scss";
+//import separate pages styles
+@import "pages-styles/_news.scss";
+@import "pages-styles/_project-thumbs.scss";
+@import "pages-styles/_contact.scss";
+
+
+
